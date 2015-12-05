@@ -1,0 +1,4 @@
+name: dslink_elios4you
+dependencies:
+  dslink:
+    git: https://github.com/IOT-DSA/sdk-dslink-dart.git
