@@ -191,7 +191,7 @@ class Elios4YouNode extends SimpleNode {
           node.attributes["@unit"] = point.unit;
           node.updateList("@unit");
         }
-        node.updateValue(point.value);
+        node.updateValue(point.value, force: true);
       }));
     }));
 
@@ -218,7 +218,7 @@ class Elios4YouNode extends SimpleNode {
 }
 
 main(List<String> args) async {
-  link = new LinkProvider(args, "Elios4You", autoInitialize: false, profiles: {
+  link = new LinkProvider(args, "Elios4You-", autoInitialize: false, profiles: {
     "client": (String path) => new Elios4YouNode(path),
     "addClient": (String path) => new AddElios4YouNode(path),
     "remove": (String path) => new DeleteActionNode.forParent(path, link.provider as MutableNodeProvider)
